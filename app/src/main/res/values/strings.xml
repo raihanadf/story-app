@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Story</string>
+
+    <string name="signup">Register</string>
+    <string name="login">Log in</string>
+    <string name="title_signup_page">Register to StoryDC</string>
+    <string name="title_login_page">Log in to StoryDC</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Nama</string>
+    <string name="greeting">Hello %1$s,</string>
+    <string name="logout">Log out</string>
+    <string name="loading_msg">Loading</string>
+    <string name="error_email">Invalid format for email!</string>
+    <string name="error_email_empty">Email field empty!</string>
+    <string name="error_password">Password length is less than 8</string>
+    <string name="error_password_empty">Password field empty</string>
+    <string name="go_to_signup">Wanna sign up first?</string>
 </resources>
