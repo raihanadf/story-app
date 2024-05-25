@@ -4,13 +4,15 @@ import com.raihan.story.data.model.dto.auth.LoginRequest
 import com.raihan.story.data.model.dto.auth.LoginResponse
 import com.raihan.story.data.model.dto.auth.RegisterRequest
 import com.raihan.story.data.model.dto.auth.RegisterResponse
-import com.raihan.story.data.model.dto.story.StoryAddRequest
 import com.raihan.story.data.model.dto.story.StoryAddResponse
 import com.raihan.story.data.model.dto.story.StoryAllResponse
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.Part
 
 interface StoryService {
     @POST("register")
@@ -29,6 +31,10 @@ interface StoryService {
     @Multipart
     @POST("stories")
     suspend fun upload(
-        @Body storyAddRequest: StoryAddRequest
+        @Part
+        photo: MultipartBody.Part,
+
+        @Part("description")
+        description: RequestBody
     ): StoryAddResponse
 }

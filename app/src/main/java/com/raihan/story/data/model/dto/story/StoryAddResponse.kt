@@ -1,14 +1,14 @@
 package com.raihan.story.data.model.dto.story
 
-import com.squareup.moshi.JsonClass
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class StoryAddResponse(
 
-	@Json(name="error")
-	val error: Boolean? = null,
+    @Json(name = "error")
+    val error: Boolean,
 
-	@Json(name="message")
-	val message: String? = null
+    @Json(name = "message")
+    val message: String
 )

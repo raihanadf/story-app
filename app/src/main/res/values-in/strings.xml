@@ -20,7 +20,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="logout_message">Kamu akan dikeluarkan dari aplikasi</string>
-    <string name="greetings_message">Halo, %1$s</string>
+    <string name="greetings_message">Halo, %1$s!</string>
     <string name="rv_description">Deskripsi</string>
     <string name="rv_name">Nama</string>
     <string name="placeholder_name">Nama</string>
@@ -33,4 +33,5 @@
     <string name="image_content_description">Gambar terambil</string>
     <string name="camera_button_content_description">Tombol Kamera</string>
     <string name="submit">Kirim</string>
+    <string name="error_upload_story">Error uploading story</string>
 </resources>

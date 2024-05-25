@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.transition.Visibility
 import com.raihan.story.R
 import com.raihan.story.base.BaseFragment
 import com.raihan.story.data.model.dto.auth.LoginRequest
@@ -57,7 +56,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         }
 
         binding.registerButton.setOnClickListener {
-            val direction = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            val direction =
+                LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
             findNavController().navigate(direction)
         }
     }

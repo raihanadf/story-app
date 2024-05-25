@@ -7,9 +7,9 @@ fun Fragment.showChooserDialog(
     title: String,
     message: String,
     positiveButtonText: String,
-    onPositiveClick:() -> Unit,
+    onPositiveClick: () -> Unit,
     negativeButtonText: String,
-){
+) {
     AlertDialog.Builder(requireContext()).apply {
         setTitle(title)
         setMessage(message)
@@ -26,8 +26,8 @@ fun Fragment.showDialog(
     title: String,
     message: String,
     positiveButtonText: String,
-    onPositiveClick:() -> Unit,
-){
+    onPositiveClick: () -> Unit,
+) {
     AlertDialog.Builder(requireContext()).apply {
         setTitle(title)
         setMessage(message)

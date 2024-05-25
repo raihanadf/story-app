@@ -3,15 +3,12 @@ package com.raihan.story.presentation.fragment.settings
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.raihan.story.R
 import com.raihan.story.base.BaseFragment
 import com.raihan.story.databinding.FragmentSettingsBinding
-import com.raihan.story.presentation.fragment.story.list.StoryListFragmentDirections
 import com.raihan.story.utils.ext.showChooserDialog
 import org.koin.android.ext.android.inject
 

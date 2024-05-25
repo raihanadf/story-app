@@ -1,8 +1,8 @@
 package com.raihan.story.data.di
 
-import com.raihan.story.utils.HeaderInterceptor
 import com.raihan.story.data.network.StoryService
 import com.raihan.story.utils.BASE_URL
+import com.raihan.story.utils.HeaderInterceptor
 import com.raihan.story.utils.PreferenceManager
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

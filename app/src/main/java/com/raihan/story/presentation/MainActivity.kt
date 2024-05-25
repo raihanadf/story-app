@@ -1,6 +1,5 @@
 package com.raihan.story.presentation
 
-import android.util.Log
 import android.view.View
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
@@ -11,7 +10,7 @@ import com.raihan.story.base.BaseActivity
 import com.raihan.story.databinding.ActivityMainBinding
 import com.raihan.story.utils.bottomBarScope
 
-class MainActivity() : BaseActivity<ActivityMainBinding>() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun assignBinding(): ActivityMainBinding =
         ActivityMainBinding.inflate(layoutInflater)

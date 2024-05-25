@@ -34,6 +34,5 @@ class StoryListViewModel(
 
     init {
         getCurrentUserName()
-        getAllStories()
     }
 }

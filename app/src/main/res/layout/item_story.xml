@@ -16,7 +16,8 @@
             android:id="@+id/iv_item_photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxHeight="150dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="250dp"
             tools:src="@tools:sample/backgrounds/scenic"
             android:scaleType="centerCrop" />
 

@@ -101,6 +101,9 @@ dependencies {
     // Coil
     implementation("io.coil-kt:coil:2.6.0")
 
+    // UCrop
+    implementation(libs.ucrop)
+
     // SplashScreen for Android 12 and up
     implementation("androidx.core:core-splashscreen:1.2.0-alpha01")
 

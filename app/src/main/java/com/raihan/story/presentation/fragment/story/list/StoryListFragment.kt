@@ -1,13 +1,10 @@
 package com.raihan.story.presentation.fragment.story.list
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.raihan.story.R
@@ -15,7 +12,6 @@ import com.raihan.story.base.BaseFragment
 import com.raihan.story.data.model.dto.network.ApiStatus
 import com.raihan.story.databinding.FragmentStoryListBinding
 import com.raihan.story.presentation.adapter.StoryAdapter
-import com.raihan.story.utils.ext.showDialog
 import com.raihan.story.utils.showToast
 import org.koin.android.ext.android.inject
 
@@ -32,6 +28,8 @@ class StoryListFragment : BaseFragment<FragmentStoryListBinding>() {
 
     override fun doSomething() {
         super.doSomething()
+        viewModel.getAllStories()
+
         initAdapterList()
         initObserver()
         initListener()

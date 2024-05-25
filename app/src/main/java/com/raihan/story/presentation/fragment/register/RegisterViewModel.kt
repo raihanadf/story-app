@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.raihan.story.data.di.viewModelModule
 import com.raihan.story.data.model.dto.auth.RegisterRequest
 import com.raihan.story.data.model.dto.auth.RegisterResponse
 import com.raihan.story.data.model.dto.network.ApiStatus
