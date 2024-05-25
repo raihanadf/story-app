@@ -144,6 +144,7 @@
 
     <Button
         android:id="@+id/signupButton"
+        android:background="@drawable/bg_button_enabled"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_marginStart="32dp"

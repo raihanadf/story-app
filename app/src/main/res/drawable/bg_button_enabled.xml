@@ -4,14 +4,12 @@
         <shape>
             <solid android:color="@color/purple_dark" />
             <corners android:radius="500dp" />
-            <padding android:left="4dp" android:right="4dp" />
         </shape>
     </item>
     <item>
         <shape>
             <solid android:color="@color/purple_dark" />
             <corners android:radius="500dp" />
-            <padding android:left="4dp" android:right="4dp" />
         </shape>
     </item>
 </selector>

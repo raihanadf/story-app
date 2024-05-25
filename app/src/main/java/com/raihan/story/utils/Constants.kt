@@ -1,5 +1,6 @@
 package com.raihan.story.utils
 
+import com.raihan.story.R
 import com.raihan.story.data.di.networkModule
 import com.raihan.story.data.di.repositoryModule
 import com.raihan.story.data.di.viewModelModule
@@ -9,6 +10,8 @@ val koinModules = listOf(
     repositoryModule,
     viewModelModule,
 )
+
+val bottomBarScope = listOf(R.id.listStoryFragment, R.id.settingsFragment)
 
 const val BASE_URL = "https://story-api.dicoding.dev/v1/"
 

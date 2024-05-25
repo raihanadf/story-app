@@ -24,7 +24,6 @@ class AuthFragment : BaseFragment<FragmentAuthBinding>() {
     private val viewModel: AuthViewModel by inject()
 
     override fun doSomething() {
-        Log.d("OK", "doSomething: kontol")
         viewModel.isLogin.observe(viewLifecycleOwner) {
             when (it.isNotEmpty()) {
 

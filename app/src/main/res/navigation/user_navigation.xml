@@ -46,13 +46,35 @@
     </fragment>
     <fragment
         android:id="@+id/listStoryFragment"
-        android:name="com.raihan.story.presentation.fragment.story.list.ListStoryFragment"
+        android:name="com.raihan.story.presentation.fragment.story.list.StoryListFragment"
         android:label="fragment_list_story"
-        tools:layout="@layout/fragment_list_story" >
+        tools:layout="@layout/fragment_story_list" >
         <action
             android:id="@+id/action_listStoryFragment_to_authFragment"
             app:destination="@id/authFragment"
             app:popUpTo="@id/listStoryFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_listStoryFragment_to_storyAddFragment"
+            app:destination="@id/storyAddFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/storyAddFragment"
+        android:name="com.raihan.story.presentation.fragment.story.add.StoryAddFragment"
+        android:label="fragment_story_add"
+        tools:layout="@layout/fragment_story_add" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.raihan.story.presentation.fragment.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storyDetailFragment"
+        android:name="com.raihan.story.presentation.fragment.story.detail.StoryDetailFragment"
+        android:label="fragment_story_detail"
+        tools:layout="@layout/fragment_story_detail" />
 </navigation>
