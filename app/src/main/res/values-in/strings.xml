@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signup">Daftar</string>
+    <string name="login">Masuk</string>
+    <string name="title_signup_page">Daftar ke Story</string>
+    <string name="title_login_page">Masuk to Story</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Nama</string>
+    <string name="logout">Keluar</string>
+    <string name="loading_msg">Loading</string>
+    <string name="error_email">Format salah untuk email!</string>
+    <string name="error_email_empty">Field email kosong!</string>
+    <string name="error_password">Panjang password kurang dari 8</string>
+    <string name="error_password_empty">Field password kosong!</string>
+    <string name="go_to_signup">Daftar terlebih dahulu?</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_settings">Pengaturan</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="logout_message">Kamu akan dikeluarkan dari aplikasi</string>
+    <string name="greetings_message">Halo, %1$s</string>
+    <string name="rv_description">Deskripsi</string>
+    <string name="rv_name">Nama</string>
+    <string name="placeholder_name">Nama</string>
+    <string name="placeholder_detail">Deskripsi</string>
+    <string name="error_fetching">Error Mengambil Data</string>
+    <string name="fab_message">Floating Action Button untuk menambah cerita</string>
+    <string name="title_detail">Detail Cerita</string>
+    <string name="title_add">Tambah Cerita</string>
+    <string name="placeholder_add">Apa ceritamu?</string>
+    <string name="image_content_description">Gambar terambil</string>
+    <string name="camera_button_content_description">Tombol Kamera</string>
+    <string name="submit">Kirim</string>
+</resources>

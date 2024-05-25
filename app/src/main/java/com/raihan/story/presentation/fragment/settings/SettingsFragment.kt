@@ -34,8 +34,15 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
 
     private fun initListener() {
         binding.logoutButton.setOnClickListener {
-
-            logOut()
+            showChooserDialog(
+                title = getString(R.string.logout),
+                message = getString(R.string.logout_message),
+                positiveButtonText = getString(R.string.yes),
+                negativeButtonText = getString(R.string.no),
+                onPositiveClick = {
+                    logOut()
+                }
+            )
         }
 
         binding.changeLanguageButton.setOnClickListener {

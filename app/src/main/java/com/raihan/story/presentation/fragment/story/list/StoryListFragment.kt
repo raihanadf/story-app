@@ -39,7 +39,9 @@ class StoryListFragment : BaseFragment<FragmentStoryListBinding>() {
 
     private fun initListener() {
         binding.fabAddStory.setOnClickListener {
-            showToast(requireActivity(), "opkeh")
+            val direction =
+                StoryListFragmentDirections.actionListStoryFragmentToStoryAddFragment()
+            findNavController().navigate(direction)
         }
     }
 

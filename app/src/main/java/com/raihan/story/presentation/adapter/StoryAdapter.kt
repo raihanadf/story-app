@@ -1,13 +1,17 @@
 package com.raihan.story.presentation.adapter
 
+import android.text.Layout.Directions
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
+import com.raihan.story.R
 import com.raihan.story.data.model.dto.story.Story
 import com.raihan.story.databinding.ItemStoryBinding
+import com.raihan.story.presentation.fragment.story.list.StoryListFragmentDirections
 
 class StoryAdapter :
     ListAdapter<Story, StoryAdapter.StoryViewHolder>(DIFF_CALLBACK) {
@@ -38,7 +42,11 @@ class StoryAdapter :
                 descriptionTv.text = item.description
 
                 root.setOnClickListener {
-                    // TODO: Add intent to detail
+                    val direction =
+                        StoryListFragmentDirections.actionListStoryFragmentToStoryDetailFragment(
+                            item
+                        )
+                    root.findNavController().navigate(direction)
                 }
             }
         }

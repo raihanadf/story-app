@@ -1,8 +1,9 @@
 package com.raihan.story.data.model.dto.story
 
-import com.raihan.story.presentation.adapter.StoryAdapter
+import android.os.Parcelable
 import com.squareup.moshi.JsonClass
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
 data class StoryAllResponse(
@@ -17,6 +18,7 @@ data class StoryAllResponse(
     val message: String
 )
 
+@Parcelize
 @JsonClass(generateAdapter = true)
 data class Story(
 
@@ -33,11 +35,11 @@ data class Story(
     val description: String? = null,
 
     @Json(name = "lon")
-    val lon: Any? = null,
+    val lon: Float? = null,
 
     @Json(name = "id")
     val id: String? = null,
 
     @Json(name = "lat")
-    val lat: Any? = null
-)
+    val lat: Float? = null
+) : Parcelable

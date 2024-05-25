@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_listStoryFragment_to_storyAddFragment"
             app:destination="@id/storyAddFragment" />
+        <action
+            android:id="@+id/action_listStoryFragment_to_storyDetailFragment"
+            app:destination="@id/storyDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/storyAddFragment"
@@ -73,5 +76,9 @@
         android:id="@+id/storyDetailFragment"
         android:name="com.raihan.story.presentation.fragment.story.detail.StoryDetailFragment"
         android:label="fragment_story_detail"
-        tools:layout="@layout/fragment_story_detail" />
+        tools:layout="@layout/fragment_story_detail" >
+        <argument
+            android:name="story"
+            app:argType="com.raihan.story.data.model.dto.story.Story" />
+    </fragment>
 </navigation>
