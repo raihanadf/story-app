@@ -29,9 +29,9 @@ class StoryDetailFragment : BaseFragment<FragmentStoryDetailBinding>() {
             StoryDetailFragmentArgs.fromBundle(requireArguments()).story
 
         with(binding) {
-            imagePhoto.load(item?.photoUrl)
-            authorTv.text = item?.name
-            descriptionTv.text = item?.description
+            ivDetailPhoto.load(item?.photoUrl)
+            tvDetailName.text = item?.name
+            tvDetailDescription.text = item?.description
             topBar.setNavigationOnClickListener {
                 findNavController().popBackStack()
             }

@@ -33,7 +33,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
     }
 
     private fun initListener() {
-        binding.logoutButton.setOnClickListener {
+        binding.actionLogout.setOnClickListener {
             showChooserDialog(
                 title = getString(R.string.logout),
                 message = getString(R.string.logout_message),

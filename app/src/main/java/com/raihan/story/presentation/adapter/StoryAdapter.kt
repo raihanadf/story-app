@@ -37,8 +37,8 @@ class StoryAdapter :
 
         fun bind(item: Story) {
             with(binding) {
-                imageView.load(item.photoUrl)
-                nameTv.text = item.name
+                ivItemPhoto.load(item.photoUrl)
+                tvItemName.text = item.name
                 descriptionTv.text = item.description
 
                 root.setOnClickListener {

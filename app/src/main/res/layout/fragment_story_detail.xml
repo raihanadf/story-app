@@ -39,7 +39,7 @@
             tools:context=".DetailActivity">
 
             <ImageView
-                android:id="@+id/image_photo"
+                android:id="@+id/iv_detail_photo"
                 android:layout_width="fill_parent"
                 android:layout_height="250dp"
                 android:adjustViewBounds="true"
@@ -49,15 +49,15 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/author_tv"
+                android:id="@+id/tv_detail_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:text="@string/placeholder_name"
                 android:textAppearance="?attr/textAppearanceHeadline5"
                 app:layout_constraintEnd_toStartOf="@id/image_icon"
-                app:layout_constraintStart_toStartOf="@id/image_photo"
-                app:layout_constraintTop_toBottomOf="@+id/image_photo" />
+                app:layout_constraintStart_toStartOf="@id/iv_detail_photo"
+                app:layout_constraintTop_toBottomOf="@+id/iv_detail_photo" />
 
             <ImageView
                 android:id="@id/image_icon"
@@ -66,10 +66,10 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:src="@drawable/ic_book"
-                app:layout_constraintBottom_toBottomOf="@id/author_tv"
+                app:layout_constraintBottom_toBottomOf="@id/tv_detail_name"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/author_tv"
-                app:layout_constraintTop_toTopOf="@id/author_tv" />
+                app:layout_constraintStart_toEndOf="@id/tv_detail_name"
+                app:layout_constraintTop_toTopOf="@id/tv_detail_name" />
 
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/divider"
@@ -77,11 +77,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="@+id/image_icon"
-                app:layout_constraintStart_toStartOf="@+id/author_tv"
-                app:layout_constraintTop_toBottomOf="@id/author_tv" />
+                app:layout_constraintStart_toStartOf="@+id/tv_detail_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_name" />
 
             <TextView
-                android:id="@+id/description_tv"
+                android:id="@+id/tv_detail_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
