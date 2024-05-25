@@ -16,7 +16,13 @@ interface StoryRepository {
 class StoryRepositoryImpl(private val api: StoryService) : StoryRepository {
     override fun getAllStories(): Flow<ApiStatus<StoryAllResponse>> = flow {
         try {
-
+            emit(ApiStatus.Loading)
+            val response = api.getAll()
+            if (!response.error) {
+                emit(ApiStatus.Success(response))
+            } else {
+                throw Exception()
+            }
         } catch (e: Exception) {
             e.printStackTrace()
             emit(ApiStatus.Error(e.message.toString()))
@@ -32,4 +38,8 @@ class StoryRepositoryImpl(private val api: StoryService) : StoryRepository {
                 emit(ApiStatus.Error(e.message.toString()))
             }
         }
+
+    init {
+        getAllStories()
+    }
 }

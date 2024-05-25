@@ -25,4 +25,10 @@
     <string name="no">No</string>
     <string name="logout_message">You are going to be logged out from the app</string>
     <string name="greetings_message">Hello, %1$s</string>
+    <string name="rv_description">Description</string>
+    <string name="rv_name">Name</string>
+    <string name="placeholder_name">name</string>
+    <string name="placeholder_detail">Description</string>
+    <string name="error_fetching">Error Fetching</string>
+    <string name="fab_message">Floating Action Button for adding story\n</string>
 </resources>

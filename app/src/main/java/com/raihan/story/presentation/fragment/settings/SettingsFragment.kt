@@ -35,15 +35,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
     private fun initListener() {
         binding.logoutButton.setOnClickListener {
 
-            showChooserDialog(
-                title = getString(R.string.logout),
-                message = getString(R.string.logout_message),
-                positiveButtonText = getString(R.string.yes),
-                negativeButtonText = getString(R.string.no),
-                onPositiveClick = {
-                    logOut()
-                }
-            )
+            logOut()
         }
 
         binding.changeLanguageButton.setOnClickListener {
@@ -54,7 +46,8 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
     private fun logOut() {
         viewModel.logout().apply {
             if (this) {
-                val direction = SettingsFragmentDirections.actionSettingsFragmentToAuthFragment()
+                val direction =
+                    SettingsFragmentDirections.actionSettingsFragmentToAuthFragment()
                 findNavController().navigate(direction)
             }
         }

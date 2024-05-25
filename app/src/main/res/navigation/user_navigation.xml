@@ -50,11 +50,6 @@
         android:label="fragment_list_story"
         tools:layout="@layout/fragment_story_list" >
         <action
-            android:id="@+id/action_listStoryFragment_to_authFragment"
-            app:destination="@id/authFragment"
-            app:popUpTo="@id/listStoryFragment"
-            app:popUpToInclusive="true" />
-        <action
             android:id="@+id/action_listStoryFragment_to_storyAddFragment"
             app:destination="@id/storyAddFragment" />
     </fragment>
@@ -70,7 +65,9 @@
         tools:layout="@layout/fragment_settings" >
         <action
             android:id="@+id/action_settingsFragment_to_authFragment"
-            app:destination="@id/authFragment" />
+            app:destination="@id/authFragment"
+            app:popUpTo="@id/authFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/storyDetailFragment"
