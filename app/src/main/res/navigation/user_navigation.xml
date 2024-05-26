@@ -69,7 +69,7 @@
         <action
             android:id="@+id/action_settingsFragment_to_authFragment"
             app:destination="@id/authFragment"
-            app:popUpTo="@id/authFragment"
+            app:popUpTo="@id/user_navigation.xml"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
