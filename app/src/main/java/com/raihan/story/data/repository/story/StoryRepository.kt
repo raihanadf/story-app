@@ -16,6 +16,7 @@ import okhttp3.RequestBody.Companion.toRequestBody
 
 interface StoryRepository {
     fun getAllStories(): Flow<ApiStatus<StoryAllResponse>>
+    fun getAllStoriesWithLocation(): Flow<ApiStatus<StoryAllResponse>>
     fun uploadStory(
         imageUri: Uri, description: String
     ): Flow<ApiStatus<StoryAddResponse>>
@@ -36,6 +37,22 @@ class StoryRepositoryImpl(private val api: StoryService) : StoryRepository {
             emit(ApiStatus.Error(e.message.toString()))
         }
     }
+
+    override fun getAllStoriesWithLocation(): Flow<ApiStatus<StoryAllResponse>> =
+        flow {
+            try {
+                emit(ApiStatus.Loading)
+                val response = api.getAllWithLocation()
+                if (!response.error) {
+                    emit(ApiStatus.Success(response))
+                } else {
+                    throw Exception()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                emit(ApiStatus.Error(e.message.toString()))
+            }
+        }
 
     override fun uploadStory(
         imageUri: Uri, description: String

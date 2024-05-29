@@ -81,4 +81,9 @@
             android:name="story"
             app:argType="com.raihan.story.data.model.dto.story.Story" />
     </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.raihan.story.presentation.fragment.map.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

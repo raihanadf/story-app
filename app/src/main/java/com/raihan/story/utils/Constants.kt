@@ -11,7 +11,8 @@ val koinModules = listOf(
     viewModelModule,
 )
 
-val bottomBarScope = listOf(R.id.listStoryFragment, R.id.settingsFragment)
+val bottomBarScope =
+    listOf(R.id.listStoryFragment, R.id.mapsFragment, R.id.settingsFragment)
 
 const val BASE_URL = "https://story-api.dicoding.dev/v1/"
 

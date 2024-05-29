@@ -2,6 +2,7 @@ package com.raihan.story.data.di
 
 import com.raihan.story.presentation.fragment.auth.AuthViewModel
 import com.raihan.story.presentation.fragment.login.LoginViewModel
+import com.raihan.story.presentation.fragment.map.MapsViewModel
 import com.raihan.story.presentation.fragment.register.RegisterViewModel
 import com.raihan.story.presentation.fragment.settings.SettingsViewModel
 import com.raihan.story.presentation.fragment.story.add.StoryAddViewModel
@@ -16,4 +17,5 @@ val viewModelModule = module {
     viewModel { StoryListViewModel(get(), get()) }
     viewModel { SettingsViewModel(get()) }
     viewModel { StoryAddViewModel(get()) }
+    viewModel { MapsViewModel(get()) }
 }

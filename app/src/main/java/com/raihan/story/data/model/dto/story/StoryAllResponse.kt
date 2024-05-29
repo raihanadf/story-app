@@ -9,7 +9,7 @@ import kotlinx.android.parcel.Parcelize
 data class StoryAllResponse(
 
     @Json(name = "listStory")
-    val listStory: List<Story?>? = null,
+    val listStory: List<Story>,
 
     @Json(name = "error")
     val error: Boolean,
@@ -35,11 +35,11 @@ data class Story(
     val description: String? = null,
 
     @Json(name = "lon")
-    val lon: Float? = null,
+    val lon: Double? = null,
 
     @Json(name = "id")
     val id: String? = null,
 
     @Json(name = "lat")
-    val lat: Float? = null
+    val lat: Double? = null
 ) : Parcelable

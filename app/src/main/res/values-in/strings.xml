@@ -34,4 +34,5 @@
     <string name="camera_button_content_description">Tombol Kamera</string>
     <string name="submit">Kirim</string>
     <string name="error_upload_story">Error uploading story</string>
+    <string name="title_map">Map</string>
 </resources>
