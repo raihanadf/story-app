@@ -3,6 +3,7 @@ package com.raihan.story.presentation.fragment.map
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -69,9 +70,13 @@ class MapsFragment : BaseFragment<FragmentMapsBinding>() {
 
         viewModel.storyResult.observe(viewLifecycleOwner) { result ->
             when (result) {
-                is ApiStatus.Loading -> showToast(requireActivity(), "Loading")
+                is ApiStatus.Loading -> {
+                    binding.viewLoading.visibility = View.VISIBLE
+                }
 
                 is ApiStatus.Success -> {
+                    binding.progressBar.isIndeterminate = false
+                    binding.progressBar.setProgress(100)
                     result.data.listStory.forEach { story ->
                         val latLng = LatLng(story.lat ?: 0.0, story.lon ?: 0.0)
                         googleMap.addMarker(
@@ -90,11 +95,17 @@ class MapsFragment : BaseFragment<FragmentMapsBinding>() {
                             300
                         )
                     )
+                    binding.viewLoading.visibility = View.GONE
                 }
 
-                is ApiStatus.Error -> showToast(
-                    requireActivity(), result.errorMessage
-                )
+                is ApiStatus.Error -> {
+                    binding.progressBar.isIndeterminate = false
+                    binding.progressBar.setProgress(100)
+                    showToast(
+                        requireActivity(), result.errorMessage
+                    )
+                    binding.txtLoading.text = "Error"
+                }
 
                 else -> {}
             }
