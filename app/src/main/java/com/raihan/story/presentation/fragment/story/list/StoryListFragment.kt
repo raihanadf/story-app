@@ -50,7 +50,7 @@ class StoryListFragment : BaseFragment<FragmentStoryListBinding>() {
             }
         )
         binding.storyRv.layoutManager = linearLayoutManager
-        viewModel.storyResult.observe(viewLifecycleOwner) { it ->
+        viewModel.storyResult.observe(viewLifecycleOwner) {
             storyAdapter.submitData(lifecycle, it)
         }
     }

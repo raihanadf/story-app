@@ -1,6 +1,9 @@
 package com.raihan.story.data.model.dto.story
 
 import android.os.Parcelable
+import androidx.annotation.NonNull
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
@@ -20,6 +23,7 @@ data class StoryAllResponse(
 
 @Parcelize
 @JsonClass(generateAdapter = true)
+@Entity(tableName = "story")
 data class Story(
 
     @Json(name = "photoUrl")
@@ -37,8 +41,9 @@ data class Story(
     @Json(name = "lon")
     val lon: Double? = null,
 
+    @PrimaryKey
     @Json(name = "id")
-    val id: String? = null,
+    val id: String,
 
     @Json(name = "lat")
     val lat: Double? = null

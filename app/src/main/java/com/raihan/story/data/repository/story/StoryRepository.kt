@@ -3,16 +3,18 @@ package com.raihan.story.data.repository.story
 import android.net.Uri
 import androidx.core.net.toFile
 import androidx.lifecycle.LiveData
+import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.liveData
+import com.raihan.story.data.local.StoryDatabase
 import com.raihan.story.data.model.dto.network.ApiStatus
 import com.raihan.story.data.model.dto.story.Story
 import com.raihan.story.data.model.dto.story.StoryAddResponse
 import com.raihan.story.data.model.dto.story.StoryAllResponse
 import com.raihan.story.data.network.StoryService
-import com.raihan.story.data.paging.StoryPagingSource
+import com.raihan.story.data.paging.StoryRemoteMediator
 import com.raihan.story.utils.ext.reduceFileImage
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -29,14 +31,19 @@ interface StoryRepository {
     ): Flow<ApiStatus<StoryAddResponse>>
 }
 
-class StoryRepositoryImpl(private val api: StoryService) : StoryRepository {
+class StoryRepositoryImpl(
+    private val api: StoryService,
+    private val database: StoryDatabase
+) : StoryRepository {
+    @OptIn(ExperimentalPagingApi::class)
     override fun getAllStories(): LiveData<PagingData<Story>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 5
             ),
+            remoteMediator = StoryRemoteMediator(database, api),
             pagingSourceFactory = {
-                StoryPagingSource(api)
+                database.storyDao().getAllStory()
             }
         ).liveData
     }
