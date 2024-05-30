@@ -18,7 +18,7 @@ class StoryListViewModel(
     val username: LiveData<String> = _username
 
     val storyResult: LiveData<PagingData<Story>> =
-        repository.getAllStories().cachedIn(viewModelScope)
+        repository.getAllStories(3).cachedIn(viewModelScope)
 
     fun getCurrentUserName() {
         _username.value = pref.name

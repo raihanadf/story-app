@@ -8,6 +8,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.liveData
+import coil.size.Size
 import com.raihan.story.data.local.StoryDatabase
 import com.raihan.story.data.model.dto.network.ApiStatus
 import com.raihan.story.data.model.dto.story.Story
@@ -24,7 +25,7 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 
 interface StoryRepository {
-    fun getAllStories(): LiveData<PagingData<Story>>
+    fun getAllStories(size: Int): LiveData<PagingData<Story>>
     fun getAllStoriesWithLocation(): Flow<ApiStatus<StoryAllResponse>>
     fun uploadStory(
         imageUri: Uri, description: String, lat: Double, long: Double
@@ -36,10 +37,10 @@ class StoryRepositoryImpl(
     private val database: StoryDatabase
 ) : StoryRepository {
     @OptIn(ExperimentalPagingApi::class)
-    override fun getAllStories(): LiveData<PagingData<Story>> {
+    override fun getAllStories(size: Int): LiveData<PagingData<Story>> {
         return Pager(
             config = PagingConfig(
-                pageSize = 5
+                pageSize = size
             ),
             remoteMediator = StoryRemoteMediator(database, api),
             pagingSourceFactory = {
