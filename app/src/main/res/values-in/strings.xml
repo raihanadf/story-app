@@ -35,4 +35,5 @@
     <string name="submit">Kirim</string>
     <string name="error_upload_story">Error uploading story</string>
     <string name="title_map">Map</string>
+    <string name="retry">Retry\n</string>
 </resources>

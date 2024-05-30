@@ -75,7 +75,8 @@ class MapsFragment : BaseFragment<FragmentMapsBinding>() {
                     result.data.listStory.forEach { story ->
                         val latLng = LatLng(story.lat ?: 0.0, story.lon ?: 0.0)
                         googleMap.addMarker(
-                            MarkerOptions().position(latLng).title(story.name).snippet(story.description)
+                            MarkerOptions().position(latLng).title(story.name)
+                                .snippet(story.description)
                         )
                         boundsBuilder.include(latLng)
                     }

@@ -3,6 +3,7 @@ package com.raihan.story.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -12,7 +13,7 @@ import com.raihan.story.databinding.ItemStoryBinding
 import com.raihan.story.presentation.fragment.story.list.StoryListFragmentDirections
 
 class StoryAdapter :
-    ListAdapter<Story, StoryAdapter.StoryViewHolder>(DIFF_CALLBACK) {
+    PagingDataAdapter<Story, StoryAdapter.StoryViewHolder>(DIFF_CALLBACK) {
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Story>() {
             override fun areItemsTheSame(

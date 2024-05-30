@@ -27,7 +27,11 @@ interface StoryService {
     ): LoginResponse
 
     @GET("stories")
-    suspend fun getAll(): StoryAllResponse
+    suspend fun getAll(
+        @Query("page") page: Int?,
+
+        @Query("size") size: Int?,
+    ): StoryAllResponse
 
     @GET("stories")
     suspend fun getAllWithLocation(
