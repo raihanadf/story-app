@@ -18,7 +18,7 @@ interface StoryRepository {
     fun getAllStories(): Flow<ApiStatus<StoryAllResponse>>
     fun getAllStoriesWithLocation(): Flow<ApiStatus<StoryAllResponse>>
     fun uploadStory(
-        imageUri: Uri, description: String
+        imageUri: Uri, description: String, lat: Double, long: Double
     ): Flow<ApiStatus<StoryAddResponse>>
 }
 
@@ -55,7 +55,10 @@ class StoryRepositoryImpl(private val api: StoryService) : StoryRepository {
         }
 
     override fun uploadStory(
-        imageUri: Uri, description: String
+        imageUri: Uri,
+        description: String,
+        lat: Double,
+        long: Double
     ): Flow<ApiStatus<StoryAddResponse>> = flow {
         try {
             emit(ApiStatus.Loading)
@@ -68,7 +71,7 @@ class StoryRepositoryImpl(private val api: StoryService) : StoryRepository {
                 "photo", photo.name, requestImageFile
             )
 
-            val response = api.upload(multipartBody, descriptionBody)
+            val response = api.upload(multipartBody, descriptionBody, lat, long)
 
             if (!response.error) {
                 emit(ApiStatus.Success(response))

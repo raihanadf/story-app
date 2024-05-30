@@ -116,6 +116,10 @@ dependencies {
     implementation("io.insert-koin:koin-android:$koin_version")
     implementation("io.insert-koin:koin-androidx-navigation:$koin_version")
 
+    // Fused Location
+    implementation("com.google.android.gms:play-services-maps:18.0.0")
+    implementation("com.google.android.gms:play-services-location:18.0.0")
+
     // Testing-related
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

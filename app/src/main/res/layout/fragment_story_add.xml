@@ -50,15 +50,44 @@
         <ImageView
             android:id="@+id/iv_preview_story"
             android:layout_width="0dp"
-            android:layout_height="400dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
             android:contentDescription="@string/image_content_description"
+            android:maxHeight="400dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ed_add_description"
             tools:src="@tools:sample/backgrounds/scenic" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/iv_preview_story"
+            app:layout_constraintTop_toBottomOf="@id/iv_preview_story">
+
+            <TextView
+                android:id="@+id/tv_with_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="With Location"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_with_location"
+                app:layout_constraintStart_toEndOf="@id/tv_with_location"
+                app:layout_constraintTop_toTopOf="@id/tv_with_location"
+                app:thumbTint="@color/purple" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

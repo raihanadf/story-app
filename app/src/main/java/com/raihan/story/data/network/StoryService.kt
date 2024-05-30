@@ -38,6 +38,8 @@ interface StoryService {
     @POST("stories")
     suspend fun upload(
         @Part photo: MultipartBody.Part,
-        @Part("description") description: RequestBody
+        @Part("description") description: RequestBody,
+        @Part("lat") lat: Double,
+        @Part("lon") lon: Double
     ): StoryAddResponse
 }
