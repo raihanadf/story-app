@@ -53,6 +53,7 @@ class StoryListFragment : BaseFragment<FragmentStoryListBinding>() {
         viewModel.storyResult.observe(viewLifecycleOwner) {
             storyAdapter.submitData(lifecycle, it)
         }
+        storyAdapter.refresh()
     }
 
     private fun initObserver() {
@@ -61,6 +62,11 @@ class StoryListFragment : BaseFragment<FragmentStoryListBinding>() {
                 binding.topBar.title = getString(R.string.greetings_message, it)
             }
         }
+    }
+
+    override fun onResume() {
+        initAdapterList()
+        super.onResume()
     }
 
 }
